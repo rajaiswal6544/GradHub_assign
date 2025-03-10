@@ -1,18 +1,26 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import SplashScreen from "@/components/ui/SplashScreen";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "GradHub - Connect Students, Employers, and Universities",
-  description: "Find your dream job with GradHub",
-};
+
 
 export default function RootLayout({ children }) {
+  const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => setShowSplash(false), 5000); // Adjust timing
+  }, []);
+
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        {showSplash ? <SplashScreen onComplete={() => setShowSplash(false)} /> : children}
+      </body>
     </html>
   );
 }
