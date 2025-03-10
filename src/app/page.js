@@ -59,7 +59,7 @@ export default function Home() {
           ].map((item, index) => (
             <div
               key={index}
-              className="w-[349px] h-[128px] rounded-[15px] border border-white bg-[#FEFEFE] shadow-md shadow-[#5A5A5A40] p-6 flex items-center"
+              className="w-[349px] h-[128px] rounded-[15px] border border-white bg-[#FEFEFE] shadow-md shadow-[#5A5A5A40] p-6 flex items-center transition-all duration-300 hover:border-[#00AEEF]"
             >
               <div className="flex-1">
               <h3 className="text-[22px] font-semibold text-[#002961] leading-[100%] mb-2">
